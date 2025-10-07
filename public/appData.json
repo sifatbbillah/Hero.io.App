@@ -1,0 +1,182 @@
+[
+  {
+    "image": "https://picsum.photos/200?random=1",
+    "title": "TaskHaven",
+    "companyName": "BlueOrbit Apps",
+    "id": 1,
+    "description": "TaskHaven helps freelancers and small teams organize their workflow with simplicity and focus. It allows users to create projects, track daily goals, set recurring tasks, and monitor progress visually. The app features offline sync, dark mode, and smart notifications that adapt to your routine. With TaskHaven, managing work and personal priorities becomes more intuitive and balanced.",
+    "size": 41,
+    "reviews": 14500,
+    "ratingAvg": 4.4,
+    "downloads": 120000,
+    "ratings": [
+      { "name": "1 star", "count": 300 },
+      { "name": "2 star", "count": 700 },
+      { "name": "3 star", "count": 1800 },
+      { "name": "4 star", "count": 5000 },
+      { "name": "5 star", "count": 8700 }
+    ]
+  },
+  {
+    "image": "https://picsum.photos/200?random=2",
+    "title": "BreezyBudget",
+    "companyName": "MintLeaf Studios",
+    "id": 2,
+    "description": "BreezyBudget is a lightweight personal finance tracker designed for people who hate complicated spreadsheets. It helps you log expenses, monitor income, and visualize spending habits using colorful graphs. You can categorize transactions, set saving goals, and export reports in PDF. The app runs offline, ensuring privacy, and syncs automatically when reconnected. It’s ideal for students or small business owners.",
+    "size": 35,
+    "reviews": 9800,
+    "ratingAvg": 4.6,
+    "downloads": 89000,
+    "ratings": [
+      { "name": "1 star", "count": 120 },
+      { "name": "2 star", "count": 400 },
+      { "name": "3 star", "count": 900 },
+      { "name": "4 star", "count": 2800 },
+      { "name": "5 star", "count": 5600 }
+    ]
+  },
+  {
+    "image": "https://picsum.photos/200?random=3",
+    "title": "NoteWave",
+    "companyName": "EchoLabs",
+    "id": 3,
+    "description": "NoteWave combines audio and text notes into a single space. Record a voice memo while typing your thoughts — the app automatically syncs both together. Ideal for students, podcasters, or journalists, it features AI transcription, searchable tags, and quick export to PDF or DOCX. It’s designed for hands-free use and offers cloud backup with end-to-end encryption.",
+    "size": 53,
+    "reviews": 20300,
+    "ratingAvg": 4.2,
+    "downloads": 130000,
+    "ratings": [
+      { "name": "1 star", "count": 400 },
+      { "name": "2 star", "count": 700 },
+      { "name": "3 star", "count": 2300 },
+      { "name": "4 star", "count": 6200 },
+      { "name": "5 star", "count": 10700 }
+    ]
+  },
+  {
+    "image": "https://picsum.photos/200?random=4",
+    "title": "MindRipple",
+    "companyName": "NovaTech Labs",
+    "id": 4,
+    "description": "MindRipple is a mindfulness app that provides guided meditations, ambient sounds, and AI-curated mental health journaling prompts. It learns your emotional patterns and suggests short sessions to help reduce stress or anxiety. The design is calming, minimal, and distraction-free. It’s suitable for busy professionals and students who need quick mental resets during their day.",
+    "size": 62,
+    "reviews": 8700,
+    "ratingAvg": 4.8,
+    "downloads": 78000,
+    "ratings": [
+      { "name": "1 star", "count": 100 },
+      { "name": "2 star", "count": 200 },
+      { "name": "3 star", "count": 800 },
+      { "name": "4 star", "count": 2400 },
+      { "name": "5 star", "count": 5200 }
+    ]
+  },
+  {
+    "image": "https://picsum.photos/200?random=5",
+    "title": "PocketLens",
+    "companyName": "Vizionary Apps",
+    "id": 5,
+    "description": "PocketLens transforms your phone into a professional document scanner. With AI auto-cropping, OCR text recognition, and cloud export options, it ensures clarity and security for every scan. The app works seamlessly offline and is great for students, freelancers, or office workers managing receipts, IDs, and forms. It even detects handwritten notes and converts them into editable text.",
+    "size": 48,
+    "reviews": 16000,
+    "ratingAvg": 4.5,
+    "downloads": 210000,
+    "ratings": [
+      { "name": "1 star", "count": 400 },
+      { "name": "2 star", "count": 700 },
+      { "name": "3 star", "count": 1800 },
+      { "name": "4 star", "count": 5400 },
+      { "name": "5 star", "count": 9700 }
+    ]
+  },
+  {
+    "image": "https://picsum.photos/200?random=6",
+    "title": "TrailSync",
+    "companyName": "Peak Horizon",
+    "id": 6,
+    "description": "TrailSync helps adventurers record hiking trails, mark scenic points, and share maps with others. It includes offline GPS tracking, elevation charts, and AI-based route suggestions depending on your fitness level. The app is designed for hikers, bikers, and outdoor lovers who want a reliable offline navigation companion with accurate weather updates.",
+    "size": 67,
+    "reviews": 11000,
+    "ratingAvg": 4.4,
+    "downloads": 150000,
+    "ratings": [
+      { "name": "1 star", "count": 300 },
+      { "name": "2 star", "count": 600 },
+      { "name": "3 star", "count": 1900 },
+      { "name": "4 star", "count": 4600 },
+      { "name": "5 star", "count": 7600 }
+    ]
+  },
+  {
+    "image": "https://picsum.photos/200?random=7",
+    "title": "WhispMail",
+    "companyName": "Zentora Labs",
+    "id": 7,
+    "description": "WhispMail is a minimalist, privacy-first email client built for simplicity. It focuses on speed, no ads, and full end-to-end encryption. The app supports multiple IMAP providers, offline drafts, and gesture navigation. It’s perfect for professionals who value privacy and a distraction-free interface while managing multiple inboxes efficiently.",
+    "size": 58,
+    "reviews": 9400,
+    "ratingAvg": 4.1,
+    "downloads": 105000,
+    "ratings": [
+      { "name": "1 star", "count": 500 },
+      { "name": "2 star", "count": 600 },
+      { "name": "3 star", "count": 2200 },
+      { "name": "4 star", "count": 3500 },
+      { "name": "5 star", "count": 4600 }
+    ]
+  },
+  {
+    "image": "https://picsum.photos/200?random=8",
+    "title": "GroovePilot",
+    "companyName": "TuneCoreX",
+    "id": 8,
+    "description": "GroovePilot lets you explore indie music from new artists around the world. It curates daily playlists based on your mood and taste using machine learning. The app offers a smooth, ad-free experience and lets you directly support creators through tips or downloads. Discover underground music scenes and hidden gems you’ll never find on mainstream platforms.",
+    "size": 61,
+    "reviews": 12800,
+    "ratingAvg": 4.7,
+    "downloads": 91000,
+    "ratings": [
+      { "name": "1 star", "count": 300 },
+      { "name": "2 star", "count": 400 },
+      { "name": "3 star", "count": 900 },
+      { "name": "4 star", "count": 3300 },
+      { "name": "5 star", "count": 7900 }
+    ]
+  },
+  {
+    "image": "https://picsum.photos/200?random=9",
+    "title": "HabitBloom",
+    "companyName": "Rooted Apps",
+    "id": 9,
+    "description": "HabitBloom helps you grow consistent habits through gentle gamification and reminders. Each habit you complete waters a virtual plant that grows as your streak continues. The app provides detailed analytics, streak repair tokens, and group challenges with friends. It’s designed to motivate consistency, not perfection, making habit-building less stressful and more rewarding.",
+    "size": 44,
+    "reviews": 8700,
+    "ratingAvg": 4.6,
+    "downloads": 83000,
+    "ratings": [
+      { "name": "1 star", "count": 150 },
+      { "name": "2 star", "count": 300 },
+      { "name": "3 star", "count": 1000 },
+      { "name": "4 star", "count": 2700 },
+      { "name": "5 star", "count": 4900 }
+    ]
+  },
+  {
+    "image": "https://picsum.photos/200?random=10",
+    "title": "EcoMeter",
+    "companyName": "GreenWave Digital",
+    "id": 10,
+    "description": "EcoMeter helps you track and reduce your daily carbon footprint. It syncs with your fitness and travel apps to measure transport emissions and suggests eco-friendly alternatives. With detailed charts, daily goals, and community achievements, EcoMeter inspires small lifestyle changes that collectively make a big environmental difference.",
+    "size": 46,
+    "reviews": 7400,
+    "ratingAvg": 4.5,
+    "downloads": 67000,
+    "ratings": [
+      { "name": "1 star", "count": 200 },
+      { "name": "2 star", "count": 300 },
+      { "name": "3 star", "count": 1000 },
+      { "name": "4 star", "count": 2200 },
+      { "name": "5 star", "count": 3700 }
+    ]
+  }
+]
