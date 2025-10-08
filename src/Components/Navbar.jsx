@@ -44,7 +44,7 @@ const Navbar = () => {
           </div>
           <div className=" md:order-3 md:col-span-1 col-span-1 flex justify-end">
             <a
-              href="https://github.com/kamruj-akash/"
+             
               target="blank"
               className="btn gradient-btn"
             >
