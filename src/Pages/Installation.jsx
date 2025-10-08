@@ -8,31 +8,33 @@ import useLoadAppData from "../Hooks/useLoadAppData";
 import { getDataFromLs } from "../utilities/LocalStorage";
 
 const Installation = () => {
-  const [showLoader, setShowLoader] = useState(true); // Loader state
-  const [appData, loader] = useLoadAppData();
+  const [showLoader, setShowLoader] = useState(true);
+  const [appDataRaw, loading] = useLoadAppData();
   const [installedApp, setInstalledApp] = useState([]);
 
-  // 🔹 Show loader for 1 second on initial render
+  const appData = Array.isArray(appDataRaw) ? appDataRaw : [];
+
+  // Show loader for 1 second on initial render
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLoader(false);
-    }, 1000); // 1 second (adjust as needed)
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
-  // 🔹 Filter installed apps from localStorage
+  // Filter installed apps from localStorage safely
   useEffect(() => {
     const storedData = getDataFromLs();
-    if (appData && Array.isArray(storedData)) {
-      const filteredData = appData.filter((data) =>
-        storedData.includes(data.id)
-      );
+    if (Array.isArray(appData) && Array.isArray(storedData)) {
+      const filteredData = appData.filter((data) => storedData.includes(data.id));
       setInstalledApp(filteredData);
+    } else {
+      setInstalledApp([]);
     }
   }, [appData]);
 
-  if (showLoader) {
-    return <Loader />; // Show loader first
+  if (showLoader || loading) {
+    return <Loader />;
   }
 
   return (
@@ -42,7 +44,7 @@ const Installation = () => {
         subTitle="Explore All Trending Apps on the Market developed by us"
       />
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center justify-between mb-5 flex-wrap gap-2">
           <h1 className="font-semibold text-[#001931] text-2xl">
             {installedApp.length} Apps Found
           </h1>
@@ -54,16 +56,21 @@ const Installation = () => {
               tabIndex={0}
               className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-sm"
             >
-              <li><a>Small to Large</a></li>
-              <li><a>Large to Small</a></li>
+              <li>
+                <a>Small to Large</a>
+              </li>
+              <li>
+                <a>Large to Small</a>
+              </li>
             </ul>
           </div>
         </div>
 
-        {/* 🔹 Installed App List */}
         <div>
-          {loader ? (
-            <Loader />
+          {installedApp.length === 0 ? (
+            <p className="text-center text-gray-500 mt-10 text-lg">
+              No apps installed yet.
+            </p>
           ) : (
             installedApp.map((app) => (
               <InstallCard

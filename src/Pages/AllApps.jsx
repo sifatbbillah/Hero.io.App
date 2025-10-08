@@ -8,32 +8,31 @@ import PageTitle from "../Components/PageTitle";
 import useLoadAppData from "../Hooks/useLoadAppData";
 
 const AllApps = () => {
-  const [appData] = useLoadAppData();
+  const [appDataRaw, loading] = useLoadAppData();
   const [searchTerm, setSearchTerm] = useState("");
-  const [showLoader, setShowLoader] = useState(true); // Start with loader visible
+  const [showLoader, setShowLoader] = useState(true);
 
-  // 🔹 7-second loader on initial render
+  // Ensure appData is always an array
+  const appData = Array.isArray(appDataRaw) ? appDataRaw : [];
+
+  // 7-second loader on initial render
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLoader(false);
-    }, 1000); // 7 seconds
-
-    return () => clearTimeout(timer); // cleanup timer
+    }, 500); // 7 seconds
+    return () => clearTimeout(timer);
   }, []);
 
-  const onchangeHandler = (e) => {
-    const inputValue = e.target.value;
-    setSearchTerm(inputValue);
-  };
+  const onchangeHandler = (e) => setSearchTerm(e.target.value);
 
+  // Filter safely
   const filteredData = appData.filter((item) =>
-    item.title.toLowerCase().trim().includes(searchTerm.toLowerCase().trim())
+    item.title?.toLowerCase().trim().includes(searchTerm.toLowerCase().trim())
   );
 
   return (
     <Container>
-      {showLoader ? (
-        // 🔹 Show loader for 7 seconds
+      {showLoader || loading ? (
         <Loader />
       ) : filteredData.length === 0 ? (
         <AppError setSearchTerm={setSearchTerm} />
@@ -45,7 +44,7 @@ const AllApps = () => {
               "Explore All Apps on the Market developed by us. We code for Millions"
             }
           />
-          {/* all apps & search app */}
+
           <div className="mb-5 flex flex-col gap-5 justify-between items-center md:flex-row">
             <h1 className="font-semibold text-2xl text-[#001931]">
               ({filteredData.length}) Apps Found
@@ -54,6 +53,7 @@ const AllApps = () => {
               <FaSearch />
               <input
                 onChange={onchangeHandler}
+                value={searchTerm}
                 className="w-full min-h-[44px] ps-2"
                 type="text"
                 name="search"
@@ -62,10 +62,9 @@ const AllApps = () => {
             </div>
           </div>
 
-          {/* 🔹 App list after loader finishes */}
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 mb-20">
-            {filteredData.map((appData) => (
-              <AppCard key={appData.id} appData={appData} />
+            {filteredData.map((app) => (
+              <AppCard key={app.id} appData={app} />
             ))}
           </div>
         </main>
