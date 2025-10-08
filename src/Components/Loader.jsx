@@ -46,7 +46,7 @@ const Loader = () => {
 
       {/* Loading Subtitle */}
       <p className="mt-6 text-gray-700 text-lg animate-pulse text-center">
-        Loading your apps...
+        Page Loading ....
       </p>
 
       {/* Inline CSS for spin animation */}
