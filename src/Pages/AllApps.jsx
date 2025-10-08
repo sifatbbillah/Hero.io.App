@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import AppCard from "../Components/AppCard";
 import AppError from "../Components/AppError";
@@ -10,13 +10,20 @@ import useLoadAppData from "../Hooks/useLoadAppData";
 const AllApps = () => {
   const [appData] = useLoadAppData();
   const [searchTerm, setSearchTerm] = useState("");
-  const [showLoader, setShowLoader] = useState(false);
+  const [showLoader, setShowLoader] = useState(true); // Start with loader visible
+
+  // 🔹 7-second loader on initial render
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoader(false);
+    }, 1000); // 7 seconds
+
+    return () => clearTimeout(timer); // cleanup timer
+  }, []);
 
   const onchangeHandler = (e) => {
-    setShowLoader(true);
     const inputValue = e.target.value;
     setSearchTerm(inputValue);
-    setShowLoader(false);
   };
 
   const filteredData = appData.filter((item) =>
@@ -25,7 +32,10 @@ const AllApps = () => {
 
   return (
     <Container>
-      {filteredData.length == 0 ? (
+      {showLoader ? (
+        // 🔹 Show loader for 7 seconds
+        <Loader />
+      ) : filteredData.length === 0 ? (
         <AppError setSearchTerm={setSearchTerm} />
       ) : (
         <main>
@@ -40,10 +50,9 @@ const AllApps = () => {
             <h1 className="font-semibold text-2xl text-[#001931]">
               ({filteredData.length}) Apps Found
             </h1>
-            <div className="flex border ps-4 rounded-md border-[#D2D2D2] items-center justify-center min-w-[400px]  text-[#627382]">
+            <div className="flex border ps-4 rounded-md border-[#D2D2D2] items-center justify-center min-w-[400px] text-[#627382]">
               <FaSearch />
               <input
-                // onChange={(e) => setSearchTerm(e.target.value)}
                 onChange={onchangeHandler}
                 className="w-full min-h-[44px] ps-2"
                 type="text"
@@ -52,15 +61,13 @@ const AllApps = () => {
               />
             </div>
           </div>
-          {showLoader ? (
-            <Loader />
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 mb-20">
-              {filteredData.map((appData) => (
-                <AppCard key={appData.id} appData={appData} />
-              ))}
-            </div>
-          )}
+
+          {/* 🔹 App list after loader finishes */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 mb-20">
+            {filteredData.map((appData) => (
+              <AppCard key={appData.id} appData={appData} />
+            ))}
+          </div>
         </main>
       )}
     </Container>

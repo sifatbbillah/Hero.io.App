@@ -2,7 +2,8 @@ import logo from "../assets/logo.png";
 const Loader = () => {
   return (
     <div className="flex items-center justify-center h-[calc(100vh-250px)]">
-      <div className="flex flex-col items-center space-y-6">
+      <div className="flex flex-row items-center space-y-6">
+        <h1 className="text-9xl font-bold text-blue-500">L   </h1>
         {/* Animated Logo */}
         <div className="animate-spin ">
           <img
@@ -11,10 +12,7 @@ const Loader = () => {
             className="w-32 h-32 animate-pulse"
           />
         </div>
-        {/* Loading Text */}
-        <p className="text-black text-xl font-medium tracking-wide animate-pulse">
-          Loading, please wait...
-        </p>
+        <h1 className="text-9xl font-bold text-blue-500">  D I N G</h1>
       </div>
     </div>
   );

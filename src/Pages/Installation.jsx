@@ -8,6 +8,12 @@ import useLoadAppData from "../Hooks/useLoadAppData";
 import { getDataFromLs } from "../utilities/LocalStorage";
 
 const Installation = () => {
+
+
+
+
+
+  
   const [appData, loader] = useLoadAppData();
   const [installedApp, setInstalledApp] = useState([]);
   useEffect(() => {
