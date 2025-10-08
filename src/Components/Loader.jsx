@@ -1,63 +1,33 @@
 import logo from "../assets/logo.png";
 
 const Loader = () => {
-  const letters = ["L", "O", "A", "D", "I", "N", "G"];
+  const letters = ["L", "A", "D", "I", "N", "G"];
+  const colors = ["#EF4444", "#F59E0B", "#10B981", "#3B82F6", "#8B5CF6", "#EC4899"];
 
   return (
-    <div className="flex items-center justify-center h-[calc(100vh-250px)] bg-gray-300">
-      {/* Spinner Container */}
-      <div className="relative w-48 h-48 flex items-center justify-center">
-        {/* Center Logo with subtle shadow */}
-        <img
-          src={logo}
-          alt="Loading Logo"
-          className="w-28 h-28 rounded-full shadow-lg animate-pulse z-10"
-        />
+    <div className="flex items-center justify-center h-[calc(100vh-250px)]">
+      <div className="flex flex-row items-center space-x-2">
+        {/* Letters before logo (first letter "L") */}
+        <h1 className="text-9xl font-bold" style={{ color: colors[0] }}>
+          {letters[0]}
+        </h1>
 
-        {/* Orbiting Letters */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div
-            className="w-full h-full"
-            style={{
-              animation: "spin 5s linear infinite",
-            }}
-          >
-            {letters.map((letter, idx) => {
-              const angle = (idx / letters.length) * 360;
-              return (
-                <div
-                  key={idx}
-                  className="absolute font-extrabold text-xl md:text-2xl"
-                  style={{
-                    top: "50%",
-                    left: "50%",
-                    transform: `rotate(${angle}deg) translate(90px) rotate(-${angle}deg)`,
-                    color: `hsl(${idx * 50}, 70%, 25%)`,
-                    textShadow: "0 0 6px rgba(0,0,0,0.3)",
-                  }}
-                >
-                  {letter}
-                </div>
-              );
-            })}
-          </div>
+        {/* Animated Logo */}
+        <div className="animate-spin">
+          <img src={logo} alt="Loading Logo" className="w-32 h-32 animate-pulse" />
         </div>
+
+        {/* Letters after logo */}
+        {letters.slice(1).map((letter, idx) => (
+          <h1
+            key={idx}
+            className="text-9xl font-bold"
+            style={{ color: colors[idx + 1] }}
+          >
+            {letter}
+          </h1>
+        ))}
       </div>
-
-      {/* Loading Subtitle */}
-      <p className="mt-6 text-gray-700 text-lg animate-pulse text-center">
-        Page Loading ....
-      </p>
-
-      {/* Inline CSS for spin animation */}
-      <style>
-        {`
-          @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-          }
-        `}
-      </style>
     </div>
   );
 };

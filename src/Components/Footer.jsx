@@ -2,45 +2,48 @@ import { FaFacebook, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { NavLink } from "react-router";
 import logo from "../assets/logo.png";
 import Container from "./Container";
+
 const Footer = () => {
   return (
-    <>
-      <footer className="bg-[#001931] text-white  p-10">
-        <Container>
-          <nav className="flex justify-between items-center pb-3 border-[#2d4256] border-b-1 mb-8">
-            <div>
-              <NavLink
-                to={"/"}
-                className="flex gap-2 justify-center items-center text-2xl uppercase font-bold  
-           text-white"
-              >
-                <img className="w-10" src={logo} alt="" /> Hero.io
+    <footer className="bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-gray-200 p-12">
+      <Container>
+        <nav className="flex flex-col md:flex-row justify-between items-center mb-10 border-b border-gray-600 pb-6">
+          <div className="mb-6 md:mb-0">
+            <NavLink
+              to={"/"}
+              className="flex gap-3 items-center text-3xl font-extrabold text-[#f59e0b] uppercase"
+            >
+              <img className="w-12" src={logo} alt="Hero.io Logo" />
+              Hero.io
+            </NavLink>
+          </div>
+
+          <div className="text-center md:text-right">
+            <h4 className="text-lg font-semibold mb-3 text-[#fbbf24]">
+              Connect with us
+            </h4>
+            <div className="flex justify-center md:justify-end gap-6 text-3xl text-[#38bdf8] hover:text-[#f59e0b] transition-colors duration-300">
+              <NavLink>
+                <FaXTwitter />
+              </NavLink>
+              <NavLink>
+                <FaLinkedin />
+              </NavLink>
+              <NavLink>
+                <FaFacebook />
               </NavLink>
             </div>
-            <div>
-              <h4 className="text-sm mb-2">Social Links</h4>
-              <div className="grid grid-flow-col gap-4">
-                <NavLink className="text-2xl">
-                  <FaXTwitter />
-                </NavLink>
-                <NavLink className="text-2xl">
-                  <FaLinkedin />
-                </NavLink>
-                <NavLink className="text-2xl">
-                  <FaFacebook />
-                </NavLink>
-              </div>
-            </div>
-          </nav>
-          <aside className="text-center">
-            <p>
-              Copyright © {new Date().getFullYear()} - All right reserved by
-              ACME Industries Ltd
-            </p>
-          </aside>
-        </Container>
-      </footer>
-    </>
+          </div>
+        </nav>
+
+        <aside className="text-center text-gray-400 text-sm">
+          <p>
+            © {new Date().getFullYear()} Hero.io. Crafted with ❤️ for a modern
+            web experience. All rights reserved.
+          </p>
+        </aside>
+      </Container>
+    </footer>
   );
 };
 

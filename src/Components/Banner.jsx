@@ -11,7 +11,7 @@ const Banner = () => {
         <span className="gradient-text font-black">Productive</span> Apps
       </h1>
       <p className="max-w-[1000px] text-center pt-4 pb-8">
-        t HERO.IO, we create innovative applications that make life easier, smarter, and more engaging. We strive to bring your ideas to life through digital experiences that truly inspire and connect.
+        At HERO.IO, we create innovative applications that make life easier, smarter, and more engaging. We strive to bring your ideas to life through digital experiences that truly inspire and connect.
       </p>
 
       <div className="flex space-x-4 mb-10">
