@@ -8,27 +8,38 @@ import useLoadAppData from "../Hooks/useLoadAppData";
 import { getDataFromLs } from "../utilities/LocalStorage";
 
 const Installation = () => {
-
-
-
-
-
-  
+  const [showLoader, setShowLoader] = useState(true); // Loader state
   const [appData, loader] = useLoadAppData();
   const [installedApp, setInstalledApp] = useState([]);
+
+  // 🔹 Show loader for 1 second on initial render
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoader(false);
+    }, 1000); // 1 second (adjust as needed)
+    return () => clearTimeout(timer);
+  }, []);
+
+  // 🔹 Filter installed apps from localStorage
   useEffect(() => {
     const storedData = getDataFromLs();
-    const filteredData = appData?.filter((data) =>
-      storedData.includes(data.id)
-    );
-    setInstalledApp(filteredData);
+    if (appData && Array.isArray(storedData)) {
+      const filteredData = appData.filter((data) =>
+        storedData.includes(data.id)
+      );
+      setInstalledApp(filteredData);
+    }
   }, [appData]);
+
+  if (showLoader) {
+    return <Loader />; // Show loader first
+  }
 
   return (
     <Container>
       <PageTitle
-        title={"Your Installed Apps"}
-        subTitle={"Explore All Trending Apps on the Market developed by us"}
+        title="Your Installed Apps"
+        subTitle="Explore All Trending Apps on the Market developed by us"
       />
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-5">
@@ -41,17 +52,15 @@ const Installation = () => {
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+              className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 shadow-sm"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Item 2</a>
-              </li>
+              <li><a>Small to Large</a></li>
+              <li><a>Large to Small</a></li>
             </ul>
           </div>
         </div>
+
+        {/* 🔹 Installed App List */}
         <div>
           {loader ? (
             <Loader />
